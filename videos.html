@@ -1,19 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="video.css">
-  <title>Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>how to make video gallery</h1>
-    <div class="row">
-      <div class="col">
-        <div class="feature-img">
-         <img src="media/back.jpg">
+        
+        <h3 class="heading">VODEO GALLERY</h3>
+        
+        <div class="container">
+           <div class="main-video">
+              <div class="video">
+                      <video src="1.mp4" controls muted autoplay></video>
+                      <h3 class="title">0.1</h3>
+              </div>
+           </div>
+           <div class="video-list">
+                   <div class="vid active">
+                           <video src="2.mp4" controls></video>
+                           <h3 class="title">0.1</h3>
+                   </div>
+                   <div class="vid">
+                           <video src="2.mp4" controls></video>
+                           <h3 class="title">0.2</h3>
+                   </div>
+                   <div class="vid">
+                           <video src="3.mp4" controls></video>
+                           <h3 class="title">0.3</h3>
+                   </div>
+                   <div class="vid">
+                           <video src="4.mp4" controls></video>
+                           <h3 class="title">0.4</h3>
+                   </div>
+                   <div class="vid">
+                           <video src="5.mp4" controls></video>
+                           <h3 class="title">0.5</h3>
+                   </div>
+                   <div class="vid">
+                           <video src="6.mp4" controls></video>
+                           <h3 class="title">0.6</h3>
+                   </div>
+                   <div class="vid">
+                           <video src="7.mp4" controls></video>
+                           <h3 class="title">0.7</h3>
+                   </div>
+                   <div class="vid">
+                           <video src="8.mp4" controls></video>
+                           <h3 class="title">0.8</h3>
+                   </div>
+                   <div class="vid">
+                           <video src="9.mp4" controls></video>
+                           <h3 class="title">0.9</h3>
+                   </div>
+           </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <script>
+                let listVideo = document.querySelectorAll('.video-list .vid');
+                let mainVideo = document.querySelector('.main-video video');
+                let title = document.querySelector('.main-video .title');
+                
+                listVideo.forEach(video =>{
+                        video.onclick = () =>{
+                                listVideo.forEach(vid => vid.classList.remove('active'));
+                                video.classList.add('active');
+                                if(video.classList.contains('active')){
+                                        let src = video.children[0].getAttribute('src');
+                                        mainVideo.src = src;
+                                        let text = video.children[1].innerhtml;
+                                        title.innerHTML = text;
+                                };
+                        };
+                });
+        </script>
 </body>
 </html>
