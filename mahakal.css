@@ -88,7 +88,7 @@ nav ul li a{
   background: linear-gradient(45deg, #87adfe, #ff77cd);
   padding-right: 20px;
   font-size: 14px;
-  animation: animate 2s linear infinite;
+  animation: animate 1s linear infinite;
 }
 @keyframes animate{
         0%{
